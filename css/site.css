@@ -171,6 +171,21 @@ html:not(.js) .need { display: none; }
 .need-row ul { list-style: none; display: grid; row-gap: 10px; max-width: 64ch; padding: 0; margin: 0; }
 .need-row a { color: var(--ink); font-weight: 500; text-decoration: underline; text-underline-offset: 0.18em; }
 
+.entry .quote { margin-top: 20px; padding-left: 16px; border-left: 2px solid var(--ink); }
+.entry .quote span { display: block; margin-top: 6px; color: var(--soft); font-size: var(--step-small); }
+
+.ataglance { padding: var(--gap) var(--m) 0; }
+.tablewrap { margin-top: 72px; overflow-x: auto; }
+.ataglance table { width: 100%; border-collapse: collapse; }
+.ataglance caption { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.ataglance th, .ataglance td { text-align: left; vertical-align: top; padding: 18px 20px 18px 0; font-weight: 400; border-top: 1px solid var(--tone-2); }
+.ataglance thead th { color: var(--soft); font-size: var(--step-small); border-top: 0; padding-bottom: 12px; }
+.ataglance tbody th { font-weight: 500; width: 26%; }
+.ataglance tbody td:nth-child(2) { width: 18%; white-space: nowrap; }
+.ataglance tr.own th, .ataglance tr.own td { background: var(--tone); }
+.ataglance tr.own th { padding-left: 16px; }
+.ataglance a { color: var(--ink); text-decoration: underline; text-underline-offset: 0.18em; }
+
 .choose { padding: var(--gap) var(--m) 0; display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 24px; row-gap: 56px; }
 .choose .stage { grid-column-end: -1; }
 .choose .stage:nth-child(1) { grid-column-start: 1; }
@@ -270,6 +285,14 @@ html.js [data-in].in { opacity: 1; transform: none; }
 
 /* ---------- phone ---------- */
 @media (max-width: 900px) {
+  .tablewrap { margin-top: 48px; }
+  .ataglance table, .ataglance tbody, .ataglance tr, .ataglance tbody th, .ataglance td { display: block; width: auto; }
+  .ataglance thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .ataglance tbody th { padding: 18px 0 2px; width: auto; }
+  .ataglance td { border-top: 0; padding: 2px 0; }
+  .ataglance tbody td:nth-child(2) { width: auto; color: var(--soft); font-size: var(--step-small); }
+  .ataglance td:last-child { padding-bottom: 18px; }
+  .ataglance tr.own th, .ataglance tr.own td { padding-left: 16px; padding-right: 16px; }
   .byneed-head, .need-row { grid-template-columns: 1fr; row-gap: 16px; }
   .byneed-head + .need-row { margin-top: 48px; }
   .need-row h3 { max-width: none; padding-right: 0; }
